@@ -1,0 +1,122 @@
+body 
+  {
+    font-family: Arial, sans-serif;
+    background-color: plum;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container1 
+  {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .container2
+  {
+    max-width: 400px;
+    margin: 30px auto;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .container3
+  {
+    max-width: 450px;
+    margin: 30px auto;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: Georgia;
+  }
+  
+  .form-container1 
+  {
+    text-align: center;
+  }
+  
+  form 
+  {
+    display: inline-block;
+  }
+  
+  input[type="text"] 
+  {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 17px;
+    text-align: center;
+    font-family: Georgia;
+  }
+  
+  input[type="submit"] 
+  {
+    padding: 8px 16px;
+    background-color: plum;
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Georgia;
+  }
+  
+  input[type="submit"]:hover 
+  {
+    background-color: rgb(208, 174, 208);
+  }
+  
+  .todo-item 
+  {
+    margin: 10px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Georgia;
+  }
+  
+  .todo-links {
+    margin-right: 10px;
+  }
+  
+  .todo-links a {
+    text-decoration: none;
+    color: rgb(228, 132, 228);
+    margin-bottom: 5px;
+    display: block;
+    font-family: Georgia;
+  }
+  
+  .todo-content {
+    flex-grow: 1;
+    font-family: Georgia;
+  }
+ 
+  .cancel
+  {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    font-family: Georgia;
+    padding: 8px 16px;
+    background-color: plum;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+
+  .cancel:hover
+  {
+    background-color: rgb(208, 174, 208);
+  }
+

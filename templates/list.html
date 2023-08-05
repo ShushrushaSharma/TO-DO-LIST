@@ -1,34 +1,41 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TODO</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-      <h1>Welcome to todo app</h1>  
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TODO</title>
+  <link rel="stylesheet" href="{% static 'list.css' %}">
+</head>
+<body>
+  <div class="container1">
+    <div class="form-container1">
       <form method="POST" action="/">
         {% csrf_token %}
         {{form.task}}
-        <input type="submit" name="Create List">
+        <br> <br>
+        <input type="submit" value="Create List">
       </form>
+    </div>
 
-      {% for Todo in todos %}
-        <div>
-          <a href="{% url 'update' Todo.id %}"> Update </a> <br>
-          <a href="{% url 'delete' Todo.id %}"> Delete </a> <br>
+    {% for Todo in todos %}
+    <div class="todo-item">
+      <div class="todo-links">
+        <a href="{% url 'update' Todo.id %}">Update</a> <br>
+        <a href="{% url 'delete' Todo.id %}">Delete</a> <br>
+      </div>
 
-          {% if Todo.complete == True%}
-          <strike>{{Todo}}</strike>
-          {% else %}
-          <span>{{Todo}}</span>
-          {% endif %}
-          
-        </div>
-      {% endfor %}
-	<script src="index.js"></script>
-  </body>
+      <div class="todo-content">
+        {% if Todo.complete %}
+          <strike>{{ Todo }}</strike>
+        {% else %}
+          <span>{{ Todo }}</span>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <script src="index.js"></script>
+</body>
 </html>

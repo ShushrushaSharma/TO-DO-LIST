@@ -8,3 +8,8 @@ class TodoForm(forms.ModelForm):
         model=Todo
         fields='__all__'
 
+        # adding the text into the form
+        widgets = {
+            'task': forms.TextInput(attrs={'placeholder': 'Add your task'}),
+        }
+
