@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+      <h1>Welcome to todo app</h1>  
+
+      <form method="POST" action="/">
+        {% csrf_token %}
+        {{form.task}}
+        <input type="submit" name="Create List">
+      </form>
+
+      {% for Todo in todos %}
+        <div>
+          <a href="{% url 'update' Todo.id %}"> Update </a> <br>
+          <a href="{% url 'delete' Todo.id %}"> Delete </a> <br>
+
+          {% if Todo.complete == True%}
+          <strike>{{Todo}}</strike>
+          {% else %}
+          <span>{{Todo}}</span>
+          {% endif %}
+          
+        </div>
+      {% endfor %}
+	<script src="index.js"></script>
+  </body>
+</html>
